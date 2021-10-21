@@ -1,23 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.scss";
+import ReactCustomModal from "./lib/ReactCustomModal";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ width: 640, margin: "15px auto" }}>
+      <h1>Hello React</h1>
+      <button type="button" className="btn">
+        Open me !
+      </button>
+      {/*<ReactCustomModal label="Email Address" placeholder="name@example.com" />*/}
     </div>
   );
 }

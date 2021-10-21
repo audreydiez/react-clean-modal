@@ -1,0 +1,17 @@
+.btn {
+  background-color: coral;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.2rem;
+  border: 0;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  transition: 0.3s;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &:visited {
+    background-color: cadetblue;
+  }
+}
