@@ -1,7 +1,25 @@
-.test {
-  background-color: #61dafb;
+.modal-overlay {
+  position: fixed;
+  z-index: 42;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
 
-  .aa {
-    color: coral;
+  display: flex;
+  flex-direction: row;
+
+  justify-content: center;
+  align-items: center;
+
+  .modal-container {
+    position: relative;
+    background-color: white;
+
+    &.modal-small {
+      width: 50%;
+      height: 50%;
+    }
   }
 }

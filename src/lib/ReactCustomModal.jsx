@@ -1,16 +1,16 @@
-import React from "react";
-import "./ReactCustomModal.scss";
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './ReactCustomModal.scss'
 
-const ReactCustomModal = ({ type = "text", label, value, onChange }) => (
-  <div className="simple-form-group">
-    {label && <label className="simple-text-label">{label}</label>}
-    <input
-      type={type}
-      className="simple-text-input"
-      value={value}
-      onChange={(e) => onChange && onChange(e.target.value)}
-    />
-  </div>
-);
+// Mettre class optionnelles pour custom css
 
-export default ReactCustomModal;
+const ReactCustomModal = ({ type = 'text', label, value, onChange, ...props }) => {
+    return ReactDOM.createPortal(
+        <div className="modal-overlay">
+            <div className="modal-container modal-small">{props.children}</div>
+        </div>,
+        document.body
+    )
+}
+
+export default ReactCustomModal
