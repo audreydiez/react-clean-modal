@@ -15,9 +15,9 @@ function App() {
             </button>
             <ReactCustomModal
                 isVisible={isVisible}
-                hide={toggleModal}
-                label="Email Address"
-                placeholder="name@example.com">
+                closeOnOverlayClick={true}
+                closeOnScroll={true}
+                toggleModal={toggleModal}>
                 <h1>HAHA</h1>
                 <button type="button" className="" onClick={toggleModal}>
                     <span aria-hidden="true">&times;</span>

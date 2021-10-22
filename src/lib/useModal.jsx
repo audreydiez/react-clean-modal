@@ -5,6 +5,10 @@ const useModal = () => {
 
     function toggleModal() {
         setIsVisible(!isVisible)
+        if (setIsVisible) {
+            return (document.body.style.overflow = 'unset')
+        }
+        document.body.style.overflow = 'hidden'
     }
 
     return {
