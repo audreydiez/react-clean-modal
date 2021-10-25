@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useState,useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import './ReactCustomModal.scss'
 
@@ -9,28 +9,44 @@ const ReactCustomModal = ({
     isVisible,
     customClass,
     closeOnOverlayClick,
-    closeOnScroll,
+    closeOnScroll= false,
+    animations= false,
     ...props
 }) => {
+
+    const [animationsOnClose, setAnimationsOnClose] = useState(false);
+
     // custom options CSS
-    const modalOptions = [customClass ? 'modal-custom' : ''].join(' ')
+    const modalOptions = [customClass ? customClass : ''].join(' ')
+
 
     function closeModalEvent() {
-        if (isVisible && closeOnScroll) {
+        if (isVisible && !animations) {
             hide()
+        }
+        if (isVisible && animations) {
+            console.log("a")
+            setAnimationsOnClose (true)
+            setTimeout(function() {
+                setAnimationsOnClose (false)
+                hide()
+            }, 250)
         }
     }
 
+    // If CloseOnScroll
     useEffect(() => {
-        window.addEventListener('wheel', closeModalEvent)
-        return () => window.removeEventListener('wheel', closeModalEvent)
+        if (closeOnScroll){
+            window.addEventListener('wheel', closeModalEvent)
+            return () => window.removeEventListener('wheel', closeModalEvent)
+        }
     }, [isVisible])
 
     return isVisible
         ? ReactDOM.createPortal(
               <div
-                  className="modal-overlay"
-                  onClick={closeOnOverlayClick ? hide : undefined}>
+                  className={`modal-overlay ${animations ? "open" : ""} ${animationsOnClose ? "close" : ""}`}
+                  onClick={closeOnOverlayClick ? closeModalEvent : undefined}>
                   <div
                       className={`modal modal-container ${modalOptions}`}
                       onClick={(e) => e.stopPropagation()}>

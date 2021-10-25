@@ -39,7 +39,8 @@ function App() {
             <ReactCustomModal
                 isVisible={showOverlay}
                 closeOnOverlayClick={true}
-                hide={toggleOverlay}>
+                hide={toggleOverlay}
+                animations={true}>
                 <h1>HAHA</h1>
                 <button type="button" className="" onClick={toggleOverlay}>
                     <span aria-hidden="true">&times;</span>
@@ -49,7 +50,10 @@ function App() {
                 isVisible={showScroll}
                 closeOnOverlayClick={true}
                 closeOnScroll={true}
-                hide={toggleScroll}>
+                hide={toggleScroll}
+                customClass={'custom-modal-class'}
+                animations={true}
+            >
                 <h1>HAHA</h1>
                 <button type="button" className="" onClick={toggleScroll}>
                     <span aria-hidden="true">&times;</span>
