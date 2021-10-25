@@ -1,20 +1,16 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
 const useModal = () => {
-    const [isVisible, setIsVisible] = useState(false)
+    const [isShowing, setIsShowing] = useState(false);
 
-    function toggleModal() {
-        setIsVisible(!isVisible)
-        if (setIsVisible) {
-            return (document.body.style.overflow = 'unset')
-        }
-        document.body.style.overflow = 'hidden'
+    function toggle() {
+        setIsShowing(!isShowing);
     }
 
     return {
-        isVisible,
-        toggleModal
+        isShowing,
+        toggle,
     }
-}
+};
 
-export default useModal
+export default useModal;

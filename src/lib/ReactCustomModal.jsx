@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import './ReactCustomModal.scss'
 
 // Mettre class optionnelles pour custom css
 
 const ReactCustomModal = ({
-    toggleModal,
+    hide,
     isVisible,
     customClass,
     closeOnOverlayClick,
@@ -17,7 +17,7 @@ const ReactCustomModal = ({
 
     function closeModalEvent() {
         if (isVisible && closeOnScroll) {
-            toggleModal()
+            hide()
         }
     }
 
@@ -30,7 +30,7 @@ const ReactCustomModal = ({
         ? ReactDOM.createPortal(
               <div
                   className="modal-overlay"
-                  onClick={closeOnOverlayClick ? toggleModal : undefined}>
+                  onClick={closeOnOverlayClick ? hide : undefined}>
                   <div
                       className={`modal modal-container ${modalOptions}`}
                       onClick={(e) => e.stopPropagation()}>
