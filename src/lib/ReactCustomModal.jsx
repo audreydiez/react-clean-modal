@@ -15,6 +15,7 @@ const ReactCustomModal = ({
     closeOnTop = false,
     ariaLabelledBy,
     testId,
+    customFooter,
     ...props
 }) => {
     const [animationsOnClose, setAnimationsOnClose] = useState(false)
@@ -23,8 +24,18 @@ const ReactCustomModal = ({
     const modalOptions = [customClass ? customClass : ''].join(' ')
 
     function closeModalEvent(e) {
-        if (e.key !== 'Escape') {
-            return
+        console.log('a')
+        if (e.key === 'Escape') {
+            if (isVisible && !animations) {
+                hide()
+            }
+            if (isVisible && animations) {
+                setAnimationsOnClose(true)
+                setTimeout(function () {
+                    setAnimationsOnClose(false)
+                    hide()
+                }, 250)
+            }
         }
         if (isVisible && !animations) {
             hide()
@@ -46,11 +57,33 @@ const ReactCustomModal = ({
         if (closeOnScroll) {
             window.addEventListener('wheel', closeModalEvent)
         }
+
         return () => {
             window.removeEventListener('wheel', closeModalEvent)
             window.removeEventListener('keyup', closeModalEvent)
         }
     }, [isVisible])
+
+    console.log(customFooter)
+
+    const createCustomFooter = () => {
+        const arrayOfBtn = []
+        customFooter.map((btn, key) => {
+            arrayOfBtn.push(
+                React.createElement(
+                    'button',
+                    {
+                        style: { color: 'red' },
+                        className: btn.className,
+                        key: key,
+                        onClick: btn.eventHandling ? btn.eventHandling : closeModalEvent
+                    },
+                    btn.text
+                )
+            )
+        })
+        return arrayOfBtn
+    }
 
     return isVisible
         ? ReactDOM.createPortal(
@@ -74,6 +107,7 @@ const ReactCustomModal = ({
                       ) : (
                           ''
                       )}
+                      {customFooter ? createCustomFooter() : ''}
                   </div>
               </div>,
               document.body
