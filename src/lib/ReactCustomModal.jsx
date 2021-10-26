@@ -16,6 +16,7 @@ const ReactCustomModal = ({
     ariaLabelledBy,
     testId,
     customFooter,
+    customFooterAlign,
     ...props
 }) => {
     const [animationsOnClose, setAnimationsOnClose] = useState(false)
@@ -64,7 +65,7 @@ const ReactCustomModal = ({
         }
     }, [isVisible])
 
-    console.log(customFooter)
+    //console.log(customFooter)
 
     const createCustomFooter = () => {
         const arrayOfBtn = []
@@ -73,7 +74,6 @@ const ReactCustomModal = ({
                 React.createElement(
                     'button',
                     {
-                        style: { color: 'red' },
                         className: btn.className,
                         key: key,
                         onClick: btn.eventHandling ? btn.eventHandling : closeModalEvent
@@ -107,7 +107,16 @@ const ReactCustomModal = ({
                       ) : (
                           ''
                       )}
-                      {customFooter ? createCustomFooter() : ''}
+                      {customFooter ? (
+                          <div
+                              className={`modal-footer ${
+                                  customFooterAlign ? customFooterAlign : 'center'
+                              } `}>
+                              {createCustomFooter()}
+                          </div>
+                      ) : (
+                          ''
+                      )}
                   </div>
               </div>,
               document.body
