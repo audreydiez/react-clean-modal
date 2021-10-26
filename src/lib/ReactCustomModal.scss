@@ -15,17 +15,16 @@
     justify-content: center;
     align-items: center;
 
-
-    &.open{
+    &.open {
         animation: fadeIn ease-out 0.1s 1 forwards;
     }
-    &.close{
+    &.close {
         animation: fadeOut ease-out 0.2s forwards;
     }
 
     .modal {
+        position: relative;
         &-container {
-            position: relative;
             background-color: white;
             width: 60%;
             height: auto;
@@ -36,15 +35,27 @@
                 rgba(0, 0, 0, 0.09) 0px -3px 5px;
         }
     }
+    .modal-close {
+        z-index: 43;
+        position: absolute;
+        top: -35px;
+        right: 5px;
+        width: 30px;
+        height: 30px;
+        & > * {
+            width: 30px;
+            height: 30px;
+        }
+    }
 }
 
 @keyframes fadeIn {
     0% {
         opacity: 0;
     }
-to {
-    opacity: 1;
-}
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes fadeOut {
