@@ -53,7 +53,7 @@ const ReactCustomModal = ({
                       onClick={(e) => e.stopPropagation()}>
                       {props.children}
                       {closeOnTop ? (
-                          <div className="modal-close">
+                          <div className="modal-close" onClick={closeModalEvent}>
                               <img src={iconClose} className="modal-close-icon" alt="" />
                           </div>
                       ) : (

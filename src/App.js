@@ -79,12 +79,7 @@ function App() {
                     <span aria-hidden="true">&times;</span>
                 </button>
             </ReactCustomModal>
-            <ReactCustomModal
-                isVisible={showCloseOnTop}
-                closeOnOverlayClick={true}
-                closeOnScroll={true}
-                closeOnTop={true}
-                hide={toggleCloseOnTop}>
+            <ReactCustomModal isVisible={showCloseOnTop} closeOnTop={true} hide={toggleCloseOnTop}>
                 <h1>HAHA</h1>
                 <button type="button" className="" onClick={toggleCloseOnTop}>
                     <span aria-hidden="true">&times;</span>
