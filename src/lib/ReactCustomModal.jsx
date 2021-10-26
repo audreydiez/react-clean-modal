@@ -13,6 +13,8 @@ const ReactCustomModal = ({
     closeOnScroll = false,
     animations = false,
     closeOnTop = false,
+    ariaLabelledBy,
+    testId,
     ...props
 }) => {
     const [animationsOnClose, setAnimationsOnClose] = useState(false)
@@ -20,7 +22,10 @@ const ReactCustomModal = ({
     // custom options CSS
     const modalOptions = [customClass ? customClass : ''].join(' ')
 
-    function closeModalEvent() {
+    function closeModalEvent(e) {
+        if (e.key !== 'Escape') {
+            return
+        }
         if (isVisible && !animations) {
             hide()
         }
@@ -33,11 +38,17 @@ const ReactCustomModal = ({
         }
     }
 
-    // If CloseOnScroll
     useEffect(() => {
+        window.addEventListener('keyup', (e) => {
+            closeModalEvent(e)
+        })
+
         if (closeOnScroll) {
             window.addEventListener('wheel', closeModalEvent)
-            return () => window.removeEventListener('wheel', closeModalEvent)
+        }
+        return () => {
+            window.removeEventListener('wheel', closeModalEvent)
+            window.removeEventListener('keyup', closeModalEvent)
         }
     }, [isVisible])
 
@@ -49,7 +60,11 @@ const ReactCustomModal = ({
                   }`}
                   onClick={closeOnOverlayClick ? closeModalEvent : undefined}>
                   <div
+                      role="dialog"
+                      aria-modal="true"
                       className={`modal modal-container ${modalOptions}`}
+                      aria-labelledby={ariaLabelledBy}
+                      data-testid={testId}
                       onClick={(e) => e.stopPropagation()}>
                       {props.children}
                       {closeOnTop ? (

@@ -10,6 +10,7 @@ function App() {
     const { isShowing: showScroll, toggle: toggleScroll } = useModal()
     const { isShowing: showAnimated, toggle: toggleAnimated } = useModal()
     const { isShowing: showCloseOnTop, toggle: toggleCloseOnTop } = useModal()
+    const { isShowing: showTestId, toggle: toggleTestId } = useModal()
 
     return (
         <div style={{ width: 640, margin: '15px auto' }}>
@@ -39,6 +40,11 @@ function App() {
             </button>
             <br />
             <br />
+            <button type="button" className="btn" onClick={toggleTestId}>
+                Open me! (testing friendly with aria)
+            </button>
+            <br />
+            <br />
 
             <ReactCustomModal isVisible={showClassic} hide={toggleClassic}>
                 <h1>HAHA</h1>
@@ -46,6 +52,7 @@ function App() {
                     <span aria-hidden="true">&times;</span>
                 </button>
             </ReactCustomModal>
+
             <ReactCustomModal
                 isVisible={showOverlay}
                 closeOnOverlayClick={true}
@@ -56,6 +63,7 @@ function App() {
                     <span aria-hidden="true">&times;</span>
                 </button>
             </ReactCustomModal>
+
             <ReactCustomModal
                 isVisible={showScroll}
                 closeOnOverlayClick={true}
@@ -67,6 +75,7 @@ function App() {
                     <span aria-hidden="true">&times;</span>
                 </button>
             </ReactCustomModal>
+
             <ReactCustomModal
                 isVisible={showAnimated}
                 closeOnOverlayClick={true}
@@ -79,9 +88,23 @@ function App() {
                     <span aria-hidden="true">&times;</span>
                 </button>
             </ReactCustomModal>
+
             <ReactCustomModal isVisible={showCloseOnTop} closeOnTop={true} hide={toggleCloseOnTop}>
                 <h1>HAHA</h1>
                 <button type="button" className="" onClick={toggleCloseOnTop}>
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </ReactCustomModal>
+
+            <ReactCustomModal
+                isVisible={showTestId}
+                closeOnOverlayClick={true}
+                closeOnScroll={true}
+                hide={toggleTestId}
+                ariaLabelledBy={'dialog1_label'}
+                testId={'modal-test'}>
+                <h1 aria-describedby="dialog1_label">HAHA</h1>
+                <button type="button" className="" onClick={toggleTestId}>
                     <span aria-hidden="true">&times;</span>
                 </button>
             </ReactCustomModal>
