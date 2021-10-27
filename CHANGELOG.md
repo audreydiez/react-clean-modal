@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.3] - 2021-10-27
+
+### Added
+- Modal custom footer: props take array button with custom event handlers
+- Modal custom footer: button can be aligned left-center-right  
+- Modal props: aria tags available
+- Modal props: data-testid for tests
+- @babel/core upgrade to "^7.15.8" for build compatibility
+
+### Fixed
+- Animations work properly when key press
+
+### Removed
+- ReactCustomButton component
+
 ## [0.1.2] - 2021-10-26
 
 ### Added
