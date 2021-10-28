@@ -140,7 +140,7 @@ const ReactCustomModal = ({
           )
         : showSpinner
         ? ReactDOM.createPortal(
-              <div className="modal-overlay">
+              <div className={`modal-overlay ${animations ? 'open' : ''}`}>
                   <Spinner />
               </div>,
               document.body
