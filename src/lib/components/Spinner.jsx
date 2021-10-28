@@ -1,5 +1,10 @@
 import './Spinner.scss'
 
+/**
+ * Function component that render simple spinner
+ *
+ * @returns
+ */
 const Spinner = () => {
     return (
         <svg className="spinner" viewBox="0 0 50 50">
