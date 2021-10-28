@@ -4,8 +4,24 @@ import './ReactCustomModal.scss'
 import iconClose from '../assets/icon_close.svg'
 import Spinner from './Spinner'
 
-// Mettre class optionnelles pour custom css
-
+/**
+ * Function component that render modal with multiple optionals params
+ * @listens {hide} hide - Handle state from parent for hide the modal component
+ * @param {boolean} isVisible - State for modal visibility
+ * @param {string} customClass - Optional additional css class for all HTML elements
+ * @param {boolean} closeOnOverlayClick - Allow close modal on overlay click (not in the modal box)
+ * @param {boolean} closeOnScroll - Allow close modal when user scroll (not in the modal box)
+ * @param {boolean} animations - Animate the modal ans spinner opening
+ * @param {boolean} closeOnTop - Add a svg button at the top with close function
+ * @param {string} ariaLabelledBy - Add ariaLabelledBy HTML attribute to modal and title
+ * @param {string} testId - add data-testid attribute to the modal container for tests
+ * @param {Array.<Object>} customFooter - Array of custom buttons for the footer of the modal
+ * @param {string} customFooterAlign - Align the modal footer button to left, right or center
+ * @param {boolean} showSpinner - Show spinner before render modal
+ * @param {props} props for the component Modal
+ *
+ * @returns
+ */
 const ReactCustomModal = ({
     hide,
     isVisible,
@@ -23,7 +39,10 @@ const ReactCustomModal = ({
 }) => {
     const [animationsOnClose, setAnimationsOnClose] = useState(false)
 
+    let tempAnimationsOpen = animations
+
     function closeModalEvent(e) {
+        // When key press event
         if (e.key === 'Escape') {
             if (isVisible && !animations) {
                 hide()
@@ -36,6 +55,7 @@ const ReactCustomModal = ({
                 }, 250)
             }
         }
+        // When ordinary closing event
         if (isVisible && !animations) {
             hide()
         }
@@ -48,8 +68,12 @@ const ReactCustomModal = ({
         }
     }
 
-    let tempAnimationsOpen = animations
-
+    /**
+     * Add event listener when component is mount.
+     * @callback Remove all event listener when unmount
+     * @event closeModalEvent#Wheel
+     * @event closeModalEvent#keyup
+     */
     useEffect(() => {
         window.addEventListener('keyup', (e) => {
             closeModalEvent(e)
@@ -59,7 +83,7 @@ const ReactCustomModal = ({
             window.addEventListener('wheel', closeModalEvent)
         }
 
-        // Si spinner, pas d'animation d'entrée
+        // If Spinner, no need animation for modal overlay
         if (showSpinner) {
             tempAnimationsOpen = false
         }
@@ -70,6 +94,10 @@ const ReactCustomModal = ({
         }
     }, [isVisible])
 
+    /**
+     * Create the custom footer if optional customFooter button are received
+     * @returns {Array} arrayOfButton - ready to display in render
+     */
     const createCustomFooter = () => {
         const arrayOfBtn = []
         customFooter.map((btn, key) => {
