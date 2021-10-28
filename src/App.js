@@ -11,6 +11,14 @@ function App() {
     const { isShowing: showCloseOnTop, toggle: toggleCloseOnTop } = useModal()
     const { isShowing: showTestId, toggle: toggleTestId } = useModal()
     const { isShowing: showCustomFooter, toggle: toggleCustomFooter } = useModal()
+    const {
+        isShowing: showClassicModal,
+        toggle: toggleClassicModal,
+        isShowingSpinner: showSpinner,
+        toggleSpinner: toggleSpinner
+    } = useModal()
+
+    let key = 1
 
     const customEvent = () => {
         alert('Ah')
@@ -28,9 +36,17 @@ function App() {
         }
     ]
 
+    const launchModalTimer = () => {
+        toggleSpinner()
+
+        setTimeout(() => {
+            toggleClassicModal()
+        }, 3000)
+    }
+
     return (
         <div style={{ width: 640, margin: '15px auto' }}>
-            <h1>Hello React</h1>
+            <h1>Hello React </h1>
             <button type="button" className="btn" onClick={toggleClassic}>
                 Open me! (classic)
             </button>
@@ -59,6 +75,11 @@ function App() {
             <br />
             <button type="button" className="btn" onClick={toggleCustomFooter}>
                 Open me! (Custom footer buttons with custom event)
+            </button>
+            <br />
+            <br />
+            <button type="button" className="btn" onClick={launchModalTimer}>
+                Open me! (3s after spinner)
             </button>
             <br />
             <br />
@@ -96,7 +117,6 @@ function App() {
                 isVisible={showCloseOnTop}
                 closeOnTop={true}
                 closeOnOverlayClick={true}
-                closeOnScroll={true}
                 animations={true}
                 hide={toggleCloseOnTop}
                 customClass={'my-class'}>
@@ -120,6 +140,17 @@ function App() {
                 hide={toggleCustomFooter}
                 customFooter={arrayOfBtn}
                 customFooterAlign={'left'}>
+                <h1>HAHA</h1>
+            </ReactCustomModal>
+
+            <ReactCustomModal
+                isVisible={showClassicModal}
+                closeOnOverlayClick={true}
+                closeOnScroll={true}
+                showSpinner={showSpinner}
+                hide={toggleClassicModal}
+                animations={true}
+                key={key}>
                 <h1>HAHA</h1>
             </ReactCustomModal>
         </div>

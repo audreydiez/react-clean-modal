@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import './ReactCustomModal.scss'
 import iconClose from './icon_close.svg'
+import Spinner from './Spinner'
 
 // Mettre class optionnelles pour custom css
 
@@ -17,12 +18,12 @@ const ReactCustomModal = ({
     testId,
     customFooter,
     customFooterAlign,
+    showSpinner,
     ...props
 }) => {
     const [animationsOnClose, setAnimationsOnClose] = useState(false)
 
     function closeModalEvent(e) {
-        console.log('a')
         if (e.key === 'Escape') {
             if (isVisible && !animations) {
                 hide()
@@ -47,6 +48,8 @@ const ReactCustomModal = ({
         }
     }
 
+    let tempAnimationsOpen = animations
+
     useEffect(() => {
         window.addEventListener('keyup', (e) => {
             closeModalEvent(e)
@@ -56,13 +59,16 @@ const ReactCustomModal = ({
             window.addEventListener('wheel', closeModalEvent)
         }
 
+        // Si spinner, pas d'animation d'entrée
+        if (showSpinner) {
+            tempAnimationsOpen = false
+        }
+
         return () => {
             window.removeEventListener('wheel', closeModalEvent)
             window.removeEventListener('keyup', closeModalEvent)
         }
     }, [isVisible])
-
-    //console.log(customFooter)
 
     const createCustomFooter = () => {
         const arrayOfBtn = []
@@ -85,9 +91,11 @@ const ReactCustomModal = ({
     return isVisible
         ? ReactDOM.createPortal(
               <div
-                  className={`modal-overlay ${animations ? 'open' : ''} ${
-                      animationsOnClose ? 'close' : ''
-                  } ${customClass ? 'modal-overlay-' + customClass : ''}`}
+                  className={`modal-overlay ${
+                      tempAnimationsOpen && showSpinner === undefined ? 'open' : ''
+                  } ${animationsOnClose ? 'close' : ''} ${
+                      customClass ? 'modal-overlay-' + customClass : ''
+                  }`}
                   onClick={closeOnOverlayClick ? closeModalEvent : undefined}>
                   <div
                       role="dialog"
@@ -127,6 +135,13 @@ const ReactCustomModal = ({
                           ''
                       )}
                   </div>
+              </div>,
+              document.body
+          )
+        : showSpinner
+        ? ReactDOM.createPortal(
+              <div className="modal-overlay">
+                  <Spinner />
               </div>,
               document.body
           )
