@@ -100,9 +100,9 @@ const ReactCustomModal = ({
                   <div
                       role="dialog"
                       aria-modal="true"
-                      className={`modal modal-container ${
+                      className={`modal modal-container ${animations ? 'open' : ''} ${
                           customClass ? 'modal-container-' + customClass : ''
-                      }`}
+                      } `}
                       aria-labelledby={ariaLabelledBy}
                       data-testid={testId}
                       onClick={(e) => e.stopPropagation()}>
