@@ -21,9 +21,6 @@ const ReactCustomModal = ({
 }) => {
     const [animationsOnClose, setAnimationsOnClose] = useState(false)
 
-    // custom options CSS
-    const modalOptions = [customClass ? customClass : ''].join(' ')
-
     function closeModalEvent(e) {
         console.log('a')
         if (e.key === 'Escape') {
@@ -90,19 +87,31 @@ const ReactCustomModal = ({
               <div
                   className={`modal-overlay ${animations ? 'open' : ''} ${
                       animationsOnClose ? 'close' : ''
-                  }`}
+                  } ${customClass ? 'modal-overlay-' + customClass : ''}`}
                   onClick={closeOnOverlayClick ? closeModalEvent : undefined}>
                   <div
                       role="dialog"
                       aria-modal="true"
-                      className={`modal modal-container ${modalOptions}`}
+                      className={`modal modal-container ${
+                          customClass ? 'modal-container-' + customClass : ''
+                      }`}
                       aria-labelledby={ariaLabelledBy}
                       data-testid={testId}
                       onClick={(e) => e.stopPropagation()}>
                       {props.children}
                       {closeOnTop ? (
-                          <div className="modal-close" onClick={closeModalEvent}>
-                              <img src={iconClose} className="modal-close-icon" alt="" />
+                          <div
+                              className={`modal-close ${
+                                  customClass ? 'modal-close-' + customClass : ''
+                              }`}
+                              onClick={closeModalEvent}>
+                              <img
+                                  src={iconClose}
+                                  className={`modal-close-icon ${
+                                      customClass ? 'modal-close-icon-' + customClass : ''
+                                  }`}
+                                  alt="Close modal"
+                              />
                           </div>
                       ) : (
                           ''
@@ -111,7 +120,7 @@ const ReactCustomModal = ({
                           <div
                               className={`modal-footer ${
                                   customFooterAlign ? customFooterAlign : 'center'
-                              } `}>
+                              } ${customClass ? 'modal-footer-' + customClass : ''}`}>
                               {createCustomFooter()}
                           </div>
                       ) : (

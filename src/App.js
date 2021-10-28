@@ -42,7 +42,7 @@ function App() {
             <br />
             <br />
             <button type="button" className="btn" onClick={toggleScroll}>
-                Open me! (on scroll)
+                Open me! (on scroll with custom modal class)
             </button>
             <br />
             <br />
@@ -85,7 +85,7 @@ function App() {
                 closeOnOverlayClick={true}
                 closeOnScroll={true}
                 hide={toggleScroll}
-                customClass={'custom-modal-class'}>
+                customClass={'my-class'}>
                 <h1>HAHA</h1>
                 <button type="button" className="btn-clean-modal" onClick={toggleScroll}>
                     Close
@@ -98,7 +98,8 @@ function App() {
                 closeOnOverlayClick={true}
                 closeOnScroll={true}
                 animations={true}
-                hide={toggleCloseOnTop}>
+                hide={toggleCloseOnTop}
+                customClass={'my-class'}>
                 <h1>HAHA</h1>
             </ReactCustomModal>
 
