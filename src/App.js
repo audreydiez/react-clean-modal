@@ -1,8 +1,8 @@
 import './App.scss'
 import React from 'react'
 
-import ReactCustomModal from './lib/ReactCustomModal'
-import useModal from './lib/useModal'
+import ReactCustomModal from './lib/components/ReactCustomModal'
+import useModal from './lib/utils/useModal'
 
 function App() {
     const { isShowing: showClassic, toggle: toggleClassic } = useModal()

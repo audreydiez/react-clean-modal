@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import './ReactCustomModal.scss'
-import iconClose from './icon_close.svg'
+import iconClose from '../assets/icon_close.svg'
 import Spinner from './Spinner'
 
 // Mettre class optionnelles pour custom css
