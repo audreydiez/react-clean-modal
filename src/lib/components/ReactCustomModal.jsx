@@ -119,6 +119,7 @@ const ReactCustomModal = ({
     return isVisible
         ? ReactDOM.createPortal(
               <div
+                  id="modal-root"
                   className={`modal-overlay ${
                       tempAnimationsOpen && showSpinner === undefined ? 'open' : ''
                   } ${animationsOnClose ? 'close' : ''} ${
