@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import ReactDOM from 'react-dom'
-/* istanbul ignore next */
 import './ReactCustomModal.scss'
-/* istanbul ignore next */
 import iconClose from '../assets/icon_close.svg'
 import Spinner from './Spinner'
 
