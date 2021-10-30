@@ -18,7 +18,12 @@
         "moduleNameMapper": {
             "\\.(css|less|sass|scss)$": "<rootDir>/__mocks__/styleMock.js",
             "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
-        }
+        },
+        "collectCoverage": true,
+        "coverageReporters": [
+            "json-summary"
+        ],
+        "coverageDirectory": "./"
     },
     "dependencies": {
         "@testing-library/jest-dom": "^5.14.1",
@@ -38,7 +43,8 @@
         "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files",
         "build-front-end": "BUILD_PATH='./doc' react-scripts build",
         "test": "react-scripts test",
-        "eject": "react-scripts eject"
+        "eject": "react-scripts eject",
+        "make-badges": "istanbul-badges-readme"
     },
     "eslintConfig": {
         "extends": [
@@ -71,6 +77,7 @@
         "eslint-plugin-jsx-a11y": "^6.4.1",
         "eslint-plugin-react": "^7.25.1",
         "eslint-plugin-react-hooks": "^4.2.0",
+        "istanbul-badges-readme": "^1.6.0",
         "node-sass": "^6.0.1",
         "prettier": "^2.4.1"
     }
