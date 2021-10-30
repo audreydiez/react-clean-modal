@@ -14,25 +14,24 @@
         "url": "https://github.com/audreydiez/react-custom-modal"
     },
     "jest": {
-        "reporters": [
-            "default",
-            [
-                "./node_modules/jest-html-reporter",
-                {
-                    "pageTitle": "Test Report"
-                }
-            ]
-        ]
+        "verbose": true,
+        "moduleNameMapper": {
+            "\\.(css|less|sass|scss)$": "<rootDir>/__mocks__/styleMock.js",
+            "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
+        }
     },
     "dependencies": {
         "@testing-library/jest-dom": "^5.14.1",
         "@testing-library/react": "^11.2.7",
         "@testing-library/react-hooks": "^7.0.2",
         "@testing-library/user-event": "^12.8.3",
+        "@wojtekmaj/enzyme-adapter-react-17": "^0.6.5",
+        "identity-obj-proxy": "^3.0.0",
         "jest-html-reporter": "^3.4.1",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
         "react-scripts": "4.0.3",
+        "react-test-renderer": "^17.0.2",
         "web-vitals": "^1.1.2"
     },
     "scripts": {
@@ -67,6 +66,8 @@
         "@babel/polyfill": "^7.12.1",
         "@babel/preset-env": "^7.15.8",
         "@testing-library/dom": "^8.10.1",
+        "enzyme": "^3.11.0",
+        "enzyme-to-json": "^3.6.2",
         "eslint-config-prettier": "^8.3.0",
         "eslint-plugin-jsx-a11y": "^6.4.1",
         "eslint-plugin-react": "^7.25.1",

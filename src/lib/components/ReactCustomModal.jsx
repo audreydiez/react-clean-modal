@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import ReactDOM from 'react-dom'
+/* istanbul ignore next */
 import './ReactCustomModal.scss'
+/* istanbul ignore next */
 import iconClose from '../assets/icon_close.svg'
 import Spinner from './Spinner'
 
@@ -169,7 +171,7 @@ const ReactCustomModal = ({
           )
         : showSpinner
         ? ReactDOM.createPortal(
-              <div className={`modal-overlay ${animations ? 'open' : ''}`}>
+              <div className={`modal-overlay spinner-overlay${animations ? 'open' : ''}`}>
                   <Spinner />
               </div>,
               document.body

@@ -1,5 +1,5 @@
 import { renderHook, act } from '@testing-library/react-hooks'
-import useModal from './useModal'
+import useModal from '../utils/useModal'
 
 describe('Test custom hook useModal', () => {
     test('should use counter', () => {
