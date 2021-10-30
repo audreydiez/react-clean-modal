@@ -1,5 +1,5 @@
 import './Spinner.scss'
-
+/* istanbul ignore next */
 /**
  * Function component that render simple spinner
  *

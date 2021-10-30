@@ -41,6 +41,7 @@ const ReactCustomModal = ({
 
     let tempAnimationsOpen = animations
 
+    /* istanbul ignore next */
     function closeModalEvent(e) {
         // When key press event
         if (e.key === 'Escape') {

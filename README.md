@@ -1,6 +1,6 @@
 | Statements                  | Branches                | Functions                 | Lines             |
 | --------------------------- | ----------------------- | ------------------------- | ----------------- |
-| ![Statements](https://img.shields.io/badge/statements-55.55%25-red.svg?style=flat) | ![Branches](https://img.shields.io/badge/branches-48.38%25-red.svg?style=flat) | ![Functions](https://img.shields.io/badge/functions-57.14%25-red.svg?style=flat) | ![Lines](https://img.shields.io/badge/lines-55.55%25-red.svg?style=flat) |
+| ![Statements](https://img.shields.io/badge/statements-85.71%25-yellow.svg?style=flat) | ![Branches](https://img.shields.io/badge/branches-68.18%25-red.svg?style=flat) | ![Functions](https://img.shields.io/badge/functions-80%25-yellow.svg?style=flat) | ![Lines](https://img.shields.io/badge/lines-85.71%25-yellow.svg?style=flat) |
 
 
 # react-clean-modal
