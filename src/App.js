@@ -1,7 +1,7 @@
 import './App.scss'
 import React from 'react'
 
-import ReactCustomModal from './lib/components/ReactCustomModal'
+import ReactCleanModal from './lib/components/ReactCleanModal'
 import useModal from './lib/utils/useModal'
 
 function App() {
@@ -84,14 +84,14 @@ function App() {
             <br />
             <br />
 
-            <ReactCustomModal isVisible={showClassic} hide={toggleClassic}>
+            <ReactCleanModal isVisible={showClassic} hide={toggleClassic}>
                 <h1>HAHA</h1>
                 <button type="button" className="btn-clean-modal" onClick={toggleClassic}>
                     Close
                 </button>
-            </ReactCustomModal>
+            </ReactCleanModal>
 
-            <ReactCustomModal
+            <ReactCleanModal
                 isVisible={showOverlay}
                 closeOnOverlayClick={true}
                 hide={toggleOverlay}>
@@ -99,9 +99,9 @@ function App() {
                 <button type="button" className="btn-clean-modal" onClick={toggleOverlay}>
                     Close
                 </button>
-            </ReactCustomModal>
+            </ReactCleanModal>
 
-            <ReactCustomModal
+            <ReactCleanModal
                 isVisible={showScroll}
                 closeOnOverlayClick={true}
                 closeOnScroll={true}
@@ -111,9 +111,9 @@ function App() {
                 <button type="button" className="btn-clean-modal" onClick={toggleScroll}>
                     Close
                 </button>
-            </ReactCustomModal>
+            </ReactCleanModal>
 
-            <ReactCustomModal
+            <ReactCleanModal
                 isVisible={showCloseOnTop}
                 closeOnTop={true}
                 closeOnOverlayClick={true}
@@ -121,9 +121,9 @@ function App() {
                 hide={toggleCloseOnTop}
                 customClass={'my-class'}>
                 <h1>HAHA</h1>
-            </ReactCustomModal>
+            </ReactCleanModal>
 
-            <ReactCustomModal
+            <ReactCleanModal
                 isVisible={showTestId}
                 closeOnOverlayClick={true}
                 closeOnScroll={true}
@@ -131,9 +131,9 @@ function App() {
                 ariaLabelledBy={'dialog1_label'}
                 testId={'modal-test'}>
                 <h1 aria-describedby="dialog1_label">HAHA</h1>
-            </ReactCustomModal>
+            </ReactCleanModal>
 
-            <ReactCustomModal
+            <ReactCleanModal
                 isVisible={showCustomFooter}
                 closeOnOverlayClick={true}
                 closeOnScroll={true}
@@ -141,9 +141,9 @@ function App() {
                 customFooter={arrayOfBtn}
                 customFooterAlign={'left'}>
                 <h1>HAHA</h1>
-            </ReactCustomModal>
+            </ReactCleanModal>
 
-            <ReactCustomModal
+            <ReactCleanModal
                 isVisible={showClassicModal}
                 closeOnOverlayClick={true}
                 closeOnScroll={true}
@@ -152,7 +152,7 @@ function App() {
                 animations={true}
                 key={key}>
                 <h1>HAHA</h1>
-            </ReactCustomModal>
+            </ReactCleanModal>
         </div>
     )
 }

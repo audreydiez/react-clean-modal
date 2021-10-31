@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import ReactCustomModal from '../components/ReactCustomModal'
+import ReactCleanModal from '../components/ReactCleanModal'
 import '@testing-library/jest-dom/extend-expect'
 import { within } from '@testing-library/dom'
 import Enzyme, { mount, shallow } from 'enzyme'
@@ -11,9 +11,9 @@ Enzyme.configure({ adapter: new Adapter() })
 describe('Children test', () => {
     test('Modal shows the children', () => {
         render(
-            <ReactCustomModal isVisible={true} closeOnOverlayClick={true}>
+            <ReactCleanModal isVisible={true} closeOnOverlayClick={true}>
                 <div data-testid="test" />
-            </ReactCustomModal>
+            </ReactCleanModal>
         )
 
         // get element only in modal-root
@@ -24,19 +24,19 @@ describe('Children test', () => {
 
 describe('Modal rendering', () => {
     test('Render modal with custom class', () => {
-        const wrapper = shallow(<ReactCustomModal isVisible={true} customClass={'my-class'} />)
+        const wrapper = shallow(<ReactCleanModal isVisible={true} customClass={'my-class'} />)
         expect(wrapper).toMatchSnapshot()
         expect(wrapper.exists('div.modal-overlay-my-class')).toEqual(true)
     })
 
     test('Render spinner before modal', () => {
-        const wrapper = shallow(<ReactCustomModal isVisible={false} showSpinner={true} />)
+        const wrapper = shallow(<ReactCleanModal isVisible={false} showSpinner={true} />)
         expect(wrapper).toMatchSnapshot()
         expect(wrapper.exists('div.spinner-overlay')).toEqual(true)
     })
 
     test('Render modal with animations', () => {
-        const wrapper = shallow(<ReactCustomModal isVisible={true} animations={true} />)
+        const wrapper = shallow(<ReactCleanModal isVisible={true} animations={true} />)
         expect(wrapper).toMatchSnapshot()
         const modalOverlay = wrapper.find('.modal-overlay')
         const modalContainer = wrapper.find('.modal-container')
@@ -60,7 +60,7 @@ describe('Modal rendering', () => {
             }
         ]
 
-        const wrapper = shallow(<ReactCustomModal isVisible={true} customFooter={arrayOfBtn} />)
+        const wrapper = shallow(<ReactCleanModal isVisible={true} customFooter={arrayOfBtn} />)
         expect(wrapper).toMatchSnapshot()
 
         expect(wrapper.exists('.btn-clean-modal-one')).toEqual(true)
@@ -73,9 +73,9 @@ describe('Modal rendering', () => {
 
     test('Render modal with aria label attribute', () => {
         const wrapper = shallow(
-            <ReactCustomModal isVisible={true} ariaLabelledBy={'dialog1_label'}>
+            <ReactCleanModal isVisible={true} ariaLabelledBy={'dialog1_label'}>
                 <h1 aria-describedby="dialog1_label">HAHA</h1>
-            </ReactCustomModal>
+            </ReactCleanModal>
         )
         expect(wrapper).toMatchSnapshot()
         expect(wrapper.find('div.modal-container').props()).toHaveProperty(
@@ -84,7 +84,7 @@ describe('Modal rendering', () => {
         )
     })
     test('Render modal with data-testid attribute', () => {
-        const wrapper = shallow(<ReactCustomModal isVisible={true} testId={'modal-test'} />)
+        const wrapper = shallow(<ReactCleanModal isVisible={true} testId={'modal-test'} />)
         expect(wrapper).toMatchSnapshot()
         expect(wrapper.find('div.modal-container').props()).toHaveProperty(
             'data-testid',

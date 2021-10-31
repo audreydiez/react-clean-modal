@@ -22,7 +22,7 @@ import Spinner from './Spinner'
  *
  * @returns
  */
-const ReactCustomModal = ({
+const ReactCleanModal = ({
     hide,
     isVisible,
     customClass,
@@ -178,4 +178,4 @@ const ReactCustomModal = ({
         : ''
 }
 
-export default ReactCustomModal
+export default ReactCleanModal

@@ -5,47 +5,58 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.1.4] - 2021-10-31
+## [0.1.5] - 2021-11-01
 
 ### Added
-- Modal props: custom class passed to all component inside portal
-- Modal spinner: spinner display before launching modalOverlay
-- Doc: JsDoc added
-- Tests: useModal and ReactCustomModal covered with tests and snapshots
+
+-   Documentation
+
+## [0.1.4] - 2021-10-27
+
+### Added
+
+-   Modal custom footer: props take array button with custom event handlers
+-   Modal custom footer: button can be aligned left-center-right
+-   Modal props: aria tags available
+-   Modal props: data-testid for tests
+-   @babel/core upgrade to "^7.15.8" for build compatibility
 
 ## [0.1.3] - 2021-10-27
 
 ### Added
-- Modal custom footer: props take array button with custom event handlers
-- Modal custom footer: button can be aligned left-center-right
-- Modal props: aria tags available
-- Modal props: data-testid for tests
-- @babel/core upgrade to "^7.15.8" for build compatibility
+
+-   Modal custom footer: props take array button with custom event handlers
+-   Modal custom footer: button can be aligned left-center-right
+-   Modal props: aria tags available
+-   Modal props: data-testid for tests
+-   @babel/core upgrade to "^7.15.8" for build compatibility
 
 ### Fixed
-- Animations work properly when key press
+
+-   Animations work properly when key press
 
 ### Removed
-- ReactCustomButton component
+
+-   ReactCustomButton component
 
 ## [0.1.2] - 2021-10-26
 
 ### Added
 
-- Modal classic
-- Modal props: clickable overlay
-- Modal props: closing on scroll
-- Modal props: animations on open/close
-- Modal props: close icon svg on top
-- CHANGELOG for better management
-- LICENSE for contribution
+-   Modal classic
+-   Modal props: clickable overlay
+-   Modal props: closing on scroll
+-   Modal props: animations on open/close
+-   Modal props: close icon svg on top
+-   CHANGELOG for better management
+-   LICENSE for contribution
 
 ## [0.1.1] - 2021-10-21
 
 ### Added
 
-- Add built files
-  
+-   Add built files
+
 [0.1.4]: https://github.com/audreydiez/react-custom-modal/pull/2
 [0.1.3]: https://github.com/audreydiez/react-custom-modal/pull/1
 [0.1.2]: https://github.com/audreydiez/react-custom-modal/commit/5b8e4da76e1655a393969549e12721bd7ac6840a
