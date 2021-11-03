@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import ReactDOM from 'react-dom'
-import './ReactCustomModal.scss'
+import './ReactCleanModal.scss'
 import iconClose from '../assets/icon_close.svg'
 import Spinner from './Spinner'
 

@@ -11,11 +11,13 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _reactDom = _interopRequireDefault(require("react-dom"));
 
-require("./ReactCustomModal.scss");
+require("./ReactCleanModal.scss");
 
-var _icon_close = _interopRequireDefault(require("./icon_close.svg"));
+var _icon_close = _interopRequireDefault(require("../assets/icon_close.svg"));
 
-const _excluded = ["hide", "isVisible", "customClass", "closeOnOverlayClick", "closeOnScroll", "animations", "closeOnTop", "ariaLabelledBy", "testId", "customFooter", "customFooterAlign"];
+var _Spinner = _interopRequireDefault(require("./Spinner"));
+
+const _excluded = ["hide", "isVisible", "customClass", "closeOnOverlayClick", "closeOnScroll", "animations", "closeOnTop", "ariaLabelledBy", "testId", "customFooter", "customFooterAlign", "showSpinner"];
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27,8 +29,25 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-// Mettre class optionnelles pour custom css
-const ReactCustomModal = _ref => {
+/**
+ * Function component that render modal with multiple optionals params
+ * @listens {hide} hide - Handle state from parent for hide the modal component
+ * @param {boolean} isVisible - State for modal visibility
+ * @param {string} customClass - Optional additional css class for all HTML elements
+ * @param {boolean} closeOnOverlayClick - Allow close modal on overlay click (not in the modal box)
+ * @param {boolean} closeOnScroll - Allow close modal when user scroll (not in the modal box)
+ * @param {boolean} animations - Animate the modal ans spinner opening
+ * @param {boolean} closeOnTop - Add a svg button at the top with close function
+ * @param {string} ariaLabelledBy - Add ariaLabelledBy HTML attribute to modal and title
+ * @param {string} testId - add data-testid attribute to the modal container for tests
+ * @param {Array.<Object>} customFooter - Array of custom buttons for the footer of the modal
+ * @param {string} customFooterAlign - Align the modal footer button to left, right or center
+ * @param {boolean} showSpinner - Show spinner before render modal
+ * @param {props} props for the component Modal
+ *
+ * @returns
+ */
+const ReactCleanModal = _ref => {
   let {
     hide,
     isVisible,
@@ -40,17 +59,17 @@ const ReactCustomModal = _ref => {
     ariaLabelledBy,
     testId,
     customFooter,
-    customFooterAlign
+    customFooterAlign,
+    showSpinner
   } = _ref,
       props = _objectWithoutProperties(_ref, _excluded);
 
-  const [animationsOnClose, setAnimationsOnClose] = (0, _react.useState)(false); // custom options CSS
-
-  const modalOptions = [customClass ? customClass : ''].join(' ');
+  const [animationsOnClose, setAnimationsOnClose] = (0, _react.useState)(false);
+  let tempAnimationsOpen = animations;
+  /* istanbul ignore next */
 
   function closeModalEvent(e) {
-    console.log('a');
-
+    // When key press event
     if (e.key === 'Escape') {
       if (isVisible && !animations) {
         hide();
@@ -63,7 +82,8 @@ const ReactCustomModal = _ref => {
           hide();
         }, 250);
       }
-    }
+    } // When ordinary closing event
+
 
     if (isVisible && !animations) {
       hide();
@@ -77,6 +97,13 @@ const ReactCustomModal = _ref => {
       }, 250);
     }
   }
+  /**
+   * Add event listener when component is mount.
+   * @callback Remove all event listener when unmount
+   * @event closeModalEvent#Wheel
+   * @event closeModalEvent#keyup
+   */
+
 
   (0, _react.useEffect)(() => {
     window.addEventListener('keyup', e => {
@@ -85,13 +112,22 @@ const ReactCustomModal = _ref => {
 
     if (closeOnScroll) {
       window.addEventListener('wheel', closeModalEvent);
+    } // If Spinner, no need animation for modal overlay
+
+
+    if (showSpinner) {
+      tempAnimationsOpen = false;
     }
 
     return () => {
       window.removeEventListener('wheel', closeModalEvent);
       window.removeEventListener('keyup', closeModalEvent);
     };
-  }, [isVisible]); //console.log(customFooter)
+  }, [isVisible]);
+  /**
+   * Create the custom footer if optional customFooter button are received
+   * @returns {Array} arrayOfButton - ready to display in render
+   */
 
   const createCustomFooter = () => {
     const arrayOfBtn = [];
@@ -106,26 +142,29 @@ const ReactCustomModal = _ref => {
   };
 
   return isVisible ? /*#__PURE__*/_reactDom.default.createPortal( /*#__PURE__*/_react.default.createElement("div", {
-    className: "modal-overlay ".concat(animations ? 'open' : '', " ").concat(animationsOnClose ? 'close' : ''),
+    id: "modal-root",
+    className: "modal-overlay ".concat(tempAnimationsOpen && showSpinner === undefined ? 'open' : '', " ").concat(animationsOnClose ? 'close' : '', " ").concat(customClass ? 'modal-overlay-' + customClass : ''),
     onClick: closeOnOverlayClick ? closeModalEvent : undefined
   }, /*#__PURE__*/_react.default.createElement("div", {
     role: "dialog",
     "aria-modal": "true",
-    className: "modal modal-container ".concat(modalOptions),
+    className: "modal modal-container ".concat(animations ? 'open' : '', " ").concat(customClass ? 'modal-container-' + customClass : '', " "),
     "aria-labelledby": ariaLabelledBy,
     "data-testid": testId,
     onClick: e => e.stopPropagation()
   }, props.children, closeOnTop ? /*#__PURE__*/_react.default.createElement("div", {
-    className: "modal-close",
+    className: "modal-close ".concat(customClass ? 'modal-close-' + customClass : ''),
     onClick: closeModalEvent
   }, /*#__PURE__*/_react.default.createElement("img", {
     src: _icon_close.default,
-    className: "modal-close-icon",
-    alt: ""
+    className: "modal-close-icon ".concat(customClass ? 'modal-close-icon-' + customClass : ''),
+    alt: "Close modal"
   })) : '', customFooter ? /*#__PURE__*/_react.default.createElement("div", {
-    className: "modal-footer ".concat(customFooterAlign ? customFooterAlign : 'center', " ")
-  }, createCustomFooter()) : '')), document.body) : '';
+    className: "modal-footer ".concat(customFooterAlign ? customFooterAlign : 'center', " ").concat(customClass ? 'modal-footer-' + customClass : '')
+  }, createCustomFooter()) : '')), document.body) : showSpinner ? /*#__PURE__*/_reactDom.default.createPortal( /*#__PURE__*/_react.default.createElement("div", {
+    className: "modal-overlay spinner-overlay".concat(animations ? 'open' : '')
+  }, /*#__PURE__*/_react.default.createElement(_Spinner.default, null)), document.body) : '';
 };
 
-var _default = ReactCustomModal;
+var _default = ReactCleanModal;
 exports.default = _default;
