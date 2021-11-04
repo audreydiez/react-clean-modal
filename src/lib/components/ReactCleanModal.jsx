@@ -106,7 +106,7 @@ const ReactCleanModal = ({
                 React.createElement(
                     'button',
                     {
-                        className: btn.className,
+                        className: btn.className + ' btn' + key,
                         key: key,
                         onClick: btn.eventHandling ? btn.eventHandling : closeModalEvent
                     },
