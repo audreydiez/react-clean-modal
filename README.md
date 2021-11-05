@@ -69,27 +69,21 @@ You can see live demo [here](https://youthful-edison-51a3c3.netlify.app/).
 
 ## How To Use
 
-To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+To use the modal plugin:
 
 ```bash
-# Clone this repository
-$ git clone git@github.com:audreydiez/react-clean-modal.git
+# in your project root terminal
+$ npm i react-clean-modal
+```
 
-# Go into the repository
-$ cd react-clean-modal
+Contributing/Fork : you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
 
+```bash
 # Install dependencies
 $ npm install
 
 # Run the app
 $ npm run start
-```
-
-To use the modal plugin inside your project :
-
-```bash
-# in your project root terminal
-$ npm i -savedev react-clean-modal
 ```
 
 ## Documentation
@@ -99,8 +93,7 @@ Props isVisible and hide are required.
 
 ```jsx
 import React from 'react'
-import ReactCleanModal from './lib/components/ReactCleanModal'
-import useModal from './lib/utils/useModal'
+import { Modal, useModal } from 'react-clean-modal'
 
 function App() {
     const { isShowing: showModal, toggle: toggleModal } = useModal()
@@ -110,14 +103,14 @@ function App() {
                 Open me!
             </button>
 
-            <ReactCleanModal isVisible={showModal} hide={toggleModal}>
+            <Modal isVisible={showModal} hide={toggleModal}>
                 // Your content
                 <h1>Title</h1>
                 <div>Content</div>
                 <button type="button" className="btn-clean-modal" onClick={toggleModal}>
                     Close me!
                 </button>
-            </ReactCleanModal>
+            </Modal>
         </>
     )
 }
@@ -129,8 +122,7 @@ You can pass an array with button (custom classes, content and event function) t
 
 ```jsx
 import React from 'react'
-import ReactCleanModal from './lib/components/ReactCleanModal'
-import useModal from './lib/utils/useModal'
+import { Modal, useModal } from 'react-clean-modal'
 
 function App() {
     const { isShowing: showModal, toggle: toggleModal } = useModal()
@@ -175,8 +167,7 @@ You can show a spinner when you waiting for async function. the modal toggle wil
 
 ```jsx
 import React from 'react'
-import ReactCleanModal from './lib/components/ReactCleanModal'
-import useModal from './lib/utils/useModal'
+import { Modal, useModal } from 'react-clean-modal'
 
 function App() {
     const {
@@ -224,7 +215,7 @@ function App() {
 | customClass         | string       | _optional_   | -                    | Add a custom class to all HTML class attributes for override styles.                  |
 | customFooter        | Array.Object | _optional_   | -                    | Add your buttons with proper event to the modal footer.                               |
 | customFooterAlign   | string       | _optional_   | 'center'             | Align your buttons array ('left', 'center','right').                                  |
-| testId              | string       | _optional_   | -                    | Add data-testid attribute to the modal container.                                     |
+| testId              | string       | _optional_   | -                    | Add data-testid attribute to the modal container for tests.                           |
 | showSpinner         | boolean      | _optional_   | false                | Update modal display with custom hook. See example above.                             |
 
 ## Credits

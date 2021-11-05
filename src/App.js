@@ -46,7 +46,7 @@ function App() {
 
     return (
         <div style={{ width: 640, margin: '15px auto' }}>
-            <h1>Hello React </h1>
+            <h1>React Clean Modal </h1>
             <button type="button" className="btn" onClick={toggleClassic}>
                 Open me! (classic)
             </button>
@@ -80,81 +80,9 @@ function App() {
             <button type="button" className="btn" onClick={launchModalTimer}>
                 Open me! (3s after spinner)
             </button>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            Pouet
+
             <ReactCleanModal isVisible={showClassic} hide={toggleClassic}>
-                <h1>HAHA</h1>
+                <h1>Modal title</h1>
                 <button type="button" className="btn-clean-modal" onClick={toggleClassic}>
                     Close
                 </button>
@@ -163,7 +91,7 @@ function App() {
                 isVisible={showOverlay}
                 closeOnOverlayClick={true}
                 hide={toggleOverlay}>
-                <h1>HAHA</h1>
+                <h1>Modal title</h1>
                 <button type="button" className="btn-clean-modal" onClick={toggleOverlay}>
                     Close
                 </button>
@@ -174,7 +102,7 @@ function App() {
                 closeOnScroll={true}
                 hide={toggleScroll}
                 customClass={'my-class'}>
-                <h1>HAHA</h1>
+                <h1>Modal title</h1>
                 <button type="button" className="btn-clean-modal" onClick={toggleScroll}>
                     Close
                 </button>
@@ -186,7 +114,7 @@ function App() {
                 animations={true}
                 hide={toggleCloseOnTop}
                 customClass={'my-class'}>
-                <h1>HAHA</h1>
+                <h1>Modal title</h1>
             </ReactCleanModal>
             <ReactCleanModal
                 isVisible={showTestId}
@@ -195,7 +123,7 @@ function App() {
                 hide={toggleTestId}
                 ariaLabelledBy={'dialog1_label'}
                 testId={'modal-test'}>
-                <h1 aria-describedby="dialog1_label">HAHA</h1>
+                <h1 aria-describedby="dialog1_label">Modal title with Aria label</h1>
             </ReactCleanModal>
             <ReactCleanModal
                 isVisible={showCustomFooter}
@@ -204,7 +132,7 @@ function App() {
                 hide={toggleCustomFooter}
                 customFooter={arrayOfBtn}
                 customFooterAlign={'left'}>
-                <h1>HAHA</h1>
+                <h1>With custom buttons</h1>
             </ReactCleanModal>
             <ReactCleanModal
                 isVisible={showClassicModal}
@@ -214,7 +142,7 @@ function App() {
                 hide={toggleClassicModal}
                 animations={true}
                 key={key}>
-                <h1>HAHA</h1>
+                <h1>Modal title after some work stuff</h1>
             </ReactCleanModal>
         </div>
     )

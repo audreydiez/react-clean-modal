@@ -2,25 +2,35 @@
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-## [0.1.6] - 2021-11-01
-
-### fix
-
--   Build files
-
-## [0.1.6] - 2021-11-01
-
-### fix
-
--   Documentation
-
-## [0.1.5] - 2021-11-01
+## [0.2.0] - 2021-11-05
 
 ### Added
 
+-   Scroll is blocked when spinner or modal is showed
+-   Custom buttons are styled with flexbox for better alignement and order
+
+### Fixed
+
+-   Modal and Hook are properly exported in index.jsx
+
+### Updated
+
+-   Changelog up to date
+-   Readme updated
+
+### Removed
+
+-   Delete test reports and unused files
+
+### Updated
+
+## [0.1.7] - 2021-11-01
+
+### Fixed
+
+-   Build files
 -   Documentation
 
 ## [0.1.4] - 2021-10-27
@@ -69,6 +79,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -   Add built files
 
+[0.2.0]: https://github.com/audreydiez/react-clean-modal/commit/8a32bea0239de59d1de8b26ad465189915915596
+[0.1.7]: https://github.com/audreydiez/react-clean-modal/commit/b338af0050cbd5dd3fd41cdcb7d53fc972aeace5
 [0.1.4]: https://github.com/audreydiez/react-custom-modal/pull/2
 [0.1.3]: https://github.com/audreydiez/react-custom-modal/pull/1
 [0.1.2]: https://github.com/audreydiez/react-custom-modal/commit/5b8e4da76e1655a393969549e12721bd7ac6840a
