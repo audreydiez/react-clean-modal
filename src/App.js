@@ -62,7 +62,6 @@ function App() {
             </button>
             <br />
             <br />
-
             <button type="button" className="btn" onClick={toggleCloseOnTop}>
                 Open me! (close on top with animation)
             </button>
@@ -83,14 +82,83 @@ function App() {
             </button>
             <br />
             <br />
-
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            Pouet
             <ReactCleanModal isVisible={showClassic} hide={toggleClassic}>
                 <h1>HAHA</h1>
                 <button type="button" className="btn-clean-modal" onClick={toggleClassic}>
                     Close
                 </button>
             </ReactCleanModal>
-
             <ReactCleanModal
                 isVisible={showOverlay}
                 closeOnOverlayClick={true}
@@ -100,7 +168,6 @@ function App() {
                     Close
                 </button>
             </ReactCleanModal>
-
             <ReactCleanModal
                 isVisible={showScroll}
                 closeOnOverlayClick={true}
@@ -112,7 +179,6 @@ function App() {
                     Close
                 </button>
             </ReactCleanModal>
-
             <ReactCleanModal
                 isVisible={showCloseOnTop}
                 closeOnTop={true}
@@ -122,7 +188,6 @@ function App() {
                 customClass={'my-class'}>
                 <h1>HAHA</h1>
             </ReactCleanModal>
-
             <ReactCleanModal
                 isVisible={showTestId}
                 closeOnOverlayClick={true}
@@ -132,7 +197,6 @@ function App() {
                 testId={'modal-test'}>
                 <h1 aria-describedby="dialog1_label">HAHA</h1>
             </ReactCleanModal>
-
             <ReactCleanModal
                 isVisible={showCustomFooter}
                 closeOnOverlayClick={true}
@@ -142,7 +206,6 @@ function App() {
                 customFooterAlign={'left'}>
                 <h1>HAHA</h1>
             </ReactCleanModal>
-
             <ReactCleanModal
                 isVisible={showClassicModal}
                 closeOnOverlayClick={true}

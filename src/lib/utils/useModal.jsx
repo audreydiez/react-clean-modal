@@ -19,6 +19,13 @@ const useModal = () => {
         // Hide spinner when modal isShowing
         if (!isShowing) {
             setIsShowingSpinner(false)
+            document.body.style.overflow = 'hidden'
+            document.body.style.paddingRight = '15px'
+        }
+        // Scroll management
+        if (isShowing) {
+            document.body.style.overflow = 'unset'
+            document.body.style.paddingRight = '0px'
         }
     }
     /**
@@ -26,6 +33,16 @@ const useModal = () => {
      */
     function toggleSpinner() {
         setIsShowingSpinner(!isShowingSpinner)
+
+        // Scroll management
+        if (!isShowing) {
+            document.body.style.overflow = 'hidden'
+            document.body.style.paddingRight = '15px'
+        }
+        if (isShowing) {
+            document.body.style.overflow = 'unset'
+            document.body.style.paddingRight = '0px'
+        }
     }
     return {
         isShowing,

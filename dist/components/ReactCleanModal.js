@@ -133,7 +133,7 @@ const ReactCleanModal = _ref => {
     const arrayOfBtn = [];
     customFooter.map((btn, key) => {
       arrayOfBtn.push( /*#__PURE__*/_react.default.createElement('button', {
-        className: btn.className,
+        className: btn.className + ' btn' + key,
         key: key,
         onClick: btn.eventHandling ? btn.eventHandling : closeModalEvent
       }, btn.text));
