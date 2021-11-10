@@ -2,7 +2,7 @@ import React from 'react'
 import { render } from '@testing-library/react'
 import ReactCleanModal from '../components/ReactCleanModal'
 import '@testing-library/jest-dom/extend-expect'
-import { within } from '@testing-library/dom'
+import { fireEvent, within } from '@testing-library/dom'
 import Enzyme, { mount, shallow } from 'enzyme'
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17'
 
@@ -90,5 +90,20 @@ describe('Modal rendering', () => {
             'data-testid',
             'modal-test'
         )
+    })
+    test('Close modal is called when button click', () => {
+        const mockCloseFn = jest.fn()
+
+        const wrapper = shallow(
+            <ReactCleanModal isVisible={true} hide={mockCloseFn}>
+                <button type="button" className="btn-clean-modal" onClick={mockCloseFn}>
+                    Close
+                </button>
+            </ReactCleanModal>
+        )
+
+        const firstButton = wrapper.find('.btn-clean-modal')
+        firstButton.simulate('click')
+        expect(mockCloseFn).toHaveBeenCalled()
     })
 })

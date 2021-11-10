@@ -28,31 +28,7 @@
         "type": "git",
         "url": "https://github.com/audreydiez/react-custom-modal"
     },
-    "jest": {
-        "verbose": false,
-        "moduleNameMapper": {
-            "\\.(css|less|sass|scss)$": "<rootDir>/__mocks__/styleMock.js",
-            "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
-        },
-        "collectCoverage": true,
-        "coverageReporters": [
-            "json-summary",
-            "html"
-        ],
-        "coverageDirectory": "./coverage",
-        "collectCoverageFrom": [
-            "src/**/*.jsx"
-        ],
-        "reporters": [
-            "default",
-            [
-                "./node_modules/jest-html-reporter",
-                {
-                    "pageTitle": "Test Report"
-                }
-            ]
-        ]
-    },
+    "jest": {},
     "dependencies": {
         "@testing-library/jest-dom": "^5.14.1",
         "@testing-library/react": "^11.2.7",
