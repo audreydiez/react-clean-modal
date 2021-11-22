@@ -242,10 +242,12 @@ exports[`Render spinner before modal 1`] = `
     containerInfo={
       <body>
         <div
-          class="modal-overlay spinner-overlay"
+          class="modal-overlay spinner-overlay "
+          role="spinner"
         >
           <svg
             class="spinner"
+            title="Spinner"
             viewBox="0 0 50 50"
           >
             <circle
@@ -262,11 +264,13 @@ exports[`Render spinner before modal 1`] = `
     }
   >
     <div
-      className="modal-overlay spinner-overlay"
+      className="modal-overlay spinner-overlay "
+      role="spinner"
     >
       <Spinner>
         <svg
           className="spinner"
+          title="Spinner"
           viewBox="0 0 50 50"
         >
           <circle

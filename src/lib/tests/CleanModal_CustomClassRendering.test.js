@@ -20,6 +20,10 @@ const arrayOfBtn = [
     }
 ]
 
+/**
+ * Test on ReactCustomModal with custom class
+ */
+
 describe('Custom Class rendering', () => {
     test('Render modal with custom class', () => {
         const wrapper = shallow(<ReactCleanModal isVisible={true} customClass={'my-class'} />)

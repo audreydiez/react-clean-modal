@@ -169,7 +169,9 @@ const ReactCleanModal = ({
           )
         : showSpinner
         ? ReactDOM.createPortal(
-              <div className={`modal-overlay spinner-overlay${animations ? 'open' : ''}`}>
+              <div
+                  role="spinner"
+                  className={`modal-overlay spinner-overlay ${animations ? 'open' : ''}`}>
                   <Spinner />
               </div>,
               document.body
