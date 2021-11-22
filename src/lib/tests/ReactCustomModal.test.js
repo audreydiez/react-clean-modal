@@ -5,10 +5,14 @@ import '@testing-library/jest-dom/extend-expect'
 import { fireEvent, within } from '@testing-library/dom'
 import Enzyme, { mount, shallow } from 'enzyme'
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17'
+import renderer from 'react-test-renderer'
+
+//jest.mock('rc-util/lib/Portal')
+import EnzymeToJson from 'enzyme-to-json'
 
 Enzyme.configure({ adapter: new Adapter() })
 
-describe('Children test', () => {
+describe('Portal Children test', () => {
     test('Modal shows the children', () => {
         render(
             <ReactCleanModal isVisible={true} closeOnOverlayClick={true}>
@@ -24,9 +28,12 @@ describe('Children test', () => {
 
 describe('Modal rendering', () => {
     test('Render modal with custom class', () => {
+        //const wrapper = shallow(<ReactCleanModal isVisible={true} customClass={'my-class'} />)
+        //expect(wrapper).toMatchSnapshot()
+        //expect(wrapper.exists('div.modal-overlay-my-class')).toEqual(true)
+
         const wrapper = shallow(<ReactCleanModal isVisible={true} customClass={'my-class'} />)
         expect(wrapper).toMatchSnapshot()
-        expect(wrapper.exists('div.modal-overlay-my-class')).toEqual(true)
     })
 
     test('Render spinner before modal', () => {
@@ -106,4 +113,23 @@ describe('Modal rendering', () => {
         firstButton.simulate('click')
         expect(mockCloseFn).toHaveBeenCalled()
     })
+    test('tester fonction interieur ', () => {
+        const wrapper = shallow(<ReactCleanModal isVisible={true} closeOnOverlayClick={true} />)
+
+        const overlay = wrapper.find('.modal-overlay')
+
+        //console.log(overlay.debug())
+
+        //overlay.simulate('click')
+
+        //const overlayClicked = wrapper.find('.modal-overlay')
+
+        //expect(overlayClicked).toHaveClass('close')
+    })
+})
+
+it('renders a snapshot', () => {
+    const subject = mount(<ReactCleanModal isVisible={true} closeOnOverlayClick={true} />)
+
+    expect(EnzymeToJson(subject)).toMatchSnapshot()
 })

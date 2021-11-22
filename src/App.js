@@ -80,7 +80,49 @@ function App() {
             <button type="button" className="btn" onClick={launchModalTimer}>
                 Open me! (3s after spinner)
             </button>
-
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            pouet
             <ReactCleanModal isVisible={showClassic} hide={toggleClassic}>
                 <h1>Modal title</h1>
                 <button type="button" className="btn-clean-modal" onClick={toggleClassic}>

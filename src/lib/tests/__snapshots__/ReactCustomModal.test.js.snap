@@ -11,3 +11,43 @@ exports[`Modal rendering Render modal with custom class 1`] = `ShallowWrapper {}
 exports[`Modal rendering Render modal with data-testid attribute 1`] = `ShallowWrapper {}`;
 
 exports[`Modal rendering Render spinner before modal 1`] = `ShallowWrapper {}`;
+
+exports[`renders a snapshot 1`] = `
+<ReactCleanModal
+  closeOnOverlayClick={true}
+  isVisible={true}
+>
+  <Portal
+    containerInfo={
+      <body>
+        <div
+          class="modal-overlay   "
+          id="modal-root"
+        >
+          <div
+            aria-modal="true"
+            class="modal modal-container   "
+            role="dialog"
+          >
+            
+            
+          </div>
+        </div>
+      </body>
+    }
+  >
+    <div
+      className="modal-overlay   "
+      id="modal-root"
+      onClick={[Function]}
+    >
+      <div
+        aria-modal="true"
+        className="modal modal-container   "
+        onClick={[Function]}
+        role="dialog"
+      />
+    </div>
+  </Portal>
+</ReactCleanModal>
+`;

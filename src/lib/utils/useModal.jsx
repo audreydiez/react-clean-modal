@@ -19,13 +19,13 @@ const useModal = () => {
         // Hide spinner when modal isShowing
         if (!isShowing) {
             setIsShowingSpinner(false)
-            document.body.style.overflow = 'hidden'
-            document.body.style.paddingRight = '15px'
+            document.body.classList.add('modal-open')
+            document.body.classList.remove('modal-close')
         }
         // Scroll management
         if (isShowing) {
-            document.body.style.overflow = 'unset'
-            document.body.style.paddingRight = '0px'
+            document.body.classList.add('modal-close')
+            document.body.classList.remove('modal-open')
         }
     }
     /**
@@ -36,12 +36,12 @@ const useModal = () => {
 
         // Scroll management
         if (!isShowing) {
-            document.body.style.overflow = 'hidden'
-            document.body.style.paddingRight = '15px'
+            document.body.classList.add('modal-open')
+            document.body.classList.remove('modal-close')
         }
         if (isShowing) {
-            document.body.style.overflow = 'unset'
-            document.body.style.paddingRight = '0px'
+            document.body.classList.add('modal-close')
+            document.body.classList.remove('modal-open')
         }
     }
     return {
