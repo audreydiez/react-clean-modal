@@ -9,8 +9,20 @@ import renderer from 'react-test-renderer'
 
 //jest.mock('rc-util/lib/Portal')
 import EnzymeToJson from 'enzyme-to-json'
-
+const mockFn = jest.fn()
 Enzyme.configure({ adapter: new Adapter() })
+const arrayOfBtn = [
+    {
+        text: 'Close modal',
+        className: 'btn-clean-modal-one',
+        eventHandling: mockFn
+    },
+    {
+        text: 'Alert me!',
+        className: 'btn-clean-modal-two',
+        eventHandling: mockFn
+    }
+]
 
 describe('Portal Children test', () => {
     test('Modal shows the children', () => {
@@ -27,15 +39,6 @@ describe('Portal Children test', () => {
 })
 
 describe('Modal rendering', () => {
-    test('Render modal with custom class', () => {
-        //const wrapper = shallow(<ReactCleanModal isVisible={true} customClass={'my-class'} />)
-        //expect(wrapper).toMatchSnapshot()
-        //expect(wrapper.exists('div.modal-overlay-my-class')).toEqual(true)
-
-        const wrapper = shallow(<ReactCleanModal isVisible={true} customClass={'my-class'} />)
-        expect(wrapper).toMatchSnapshot()
-    })
-
     test('Render spinner before modal', () => {
         const wrapper = shallow(<ReactCleanModal isVisible={false} showSpinner={true} />)
         expect(wrapper).toMatchSnapshot()
