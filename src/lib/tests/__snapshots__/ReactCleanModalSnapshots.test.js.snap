@@ -1,0 +1,285 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render modal with aria label attribute 1`] = `
+<ReactCleanModal
+  ariaLabelledBy="dialog1_label"
+  isVisible={true}
+>
+  <Portal
+    containerInfo={
+      <body>
+        <div
+          class="modal-overlay   "
+          id="modal-root"
+        >
+          <div
+            aria-labelledby="dialog1_label"
+            aria-modal="true"
+            class="modal modal-container   "
+            role="dialog"
+          >
+            <h1
+              aria-describedby="dialog1_label"
+            >
+              HAHA
+            </h1>
+            
+            
+          </div>
+        </div>
+      </body>
+    }
+  >
+    <div
+      className="modal-overlay   "
+      id="modal-root"
+    >
+      <div
+        aria-labelledby="dialog1_label"
+        aria-modal="true"
+        className="modal modal-container   "
+        onClick={[Function]}
+        role="dialog"
+      >
+        <h1
+          aria-describedby="dialog1_label"
+        >
+          HAHA
+        </h1>
+      </div>
+    </div>
+  </Portal>
+</ReactCleanModal>
+`;
+
+exports[`Render modal with custom button and custom function 1`] = `
+<ReactCleanModal
+  customFooter={
+    Array [
+      Object {
+        "className": "btn-clean-modal-one",
+        "eventHandling": [MockFunction],
+        "text": "Close modal",
+      },
+      Object {
+        "className": "btn-clean-modal-two",
+        "eventHandling": [MockFunction],
+        "text": "Alert me!",
+      },
+    ]
+  }
+  isVisible={true}
+>
+  <Portal
+    containerInfo={
+      <body>
+        <div
+          class="modal-overlay   "
+          id="modal-root"
+        >
+          <div
+            aria-modal="true"
+            class="modal modal-container   "
+            role="dialog"
+          >
+            
+            <div
+              class="modal-footer center "
+            >
+              <button
+                class="btn-clean-modal-one btn0"
+              >
+                Close modal
+              </button>
+              <button
+                class="btn-clean-modal-two btn1"
+              >
+                Alert me!
+              </button>
+            </div>
+          </div>
+        </div>
+      </body>
+    }
+  >
+    <div
+      className="modal-overlay   "
+      id="modal-root"
+    >
+      <div
+        aria-modal="true"
+        className="modal modal-container   "
+        onClick={[Function]}
+        role="dialog"
+      >
+        <div
+          className="modal-footer center "
+        >
+          <button
+            className="btn-clean-modal-one btn0"
+            key="0"
+            onClick={[MockFunction]}
+          >
+            Close modal
+          </button>
+          <button
+            className="btn-clean-modal-two btn1"
+            key="1"
+            onClick={[MockFunction]}
+          >
+            Alert me!
+          </button>
+        </div>
+      </div>
+    </div>
+  </Portal>
+</ReactCleanModal>
+`;
+
+exports[`Render modal with custom class 1`] = `
+<ReactCleanModal
+  customClass="my-class"
+  isVisible={true}
+>
+  <Portal
+    containerInfo={
+      <body>
+        <div
+          class="modal-overlay   modal-overlay-my-class"
+          id="modal-root"
+        >
+          <div
+            aria-modal="true"
+            class="modal modal-container  modal-container-my-class "
+            role="dialog"
+          >
+            
+            
+          </div>
+        </div>
+      </body>
+    }
+  >
+    <div
+      className="modal-overlay   modal-overlay-my-class"
+      id="modal-root"
+    >
+      <div
+        aria-modal="true"
+        className="modal modal-container  modal-container-my-class "
+        onClick={[Function]}
+        role="dialog"
+      />
+    </div>
+  </Portal>
+</ReactCleanModal>
+`;
+
+exports[`Render portal with children inside 1`] = `
+<ReactCleanModal
+  isVisible={true}
+>
+  <Portal
+    containerInfo={
+      <body>
+        <div
+          class="modal-overlay   "
+          id="modal-root"
+        >
+          <div
+            aria-modal="true"
+            class="modal modal-container   "
+            role="dialog"
+          >
+            <h1>
+              Modal title
+            </h1>
+            <button
+              class="btn-clean-modal"
+              type="button"
+            >
+              Close
+            </button>
+            
+            
+          </div>
+        </div>
+      </body>
+    }
+  >
+    <div
+      className="modal-overlay   "
+      id="modal-root"
+    >
+      <div
+        aria-modal="true"
+        className="modal modal-container   "
+        onClick={[Function]}
+        role="dialog"
+      >
+        <h1>
+          Modal title
+        </h1>
+        <button
+          className="btn-clean-modal"
+          onClick={[MockFunction]}
+          type="button"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </Portal>
+</ReactCleanModal>
+`;
+
+exports[`Render spinner before modal 1`] = `
+<ReactCleanModal
+  isVisible={false}
+  showSpinner={true}
+>
+  <Portal
+    containerInfo={
+      <body>
+        <div
+          class="modal-overlay spinner-overlay"
+        >
+          <svg
+            class="spinner"
+            viewBox="0 0 50 50"
+          >
+            <circle
+              class="path"
+              cx="25"
+              cy="25"
+              fill="none"
+              r="20"
+              stroke-width="5"
+            />
+          </svg>
+        </div>
+      </body>
+    }
+  >
+    <div
+      className="modal-overlay spinner-overlay"
+    >
+      <Spinner>
+        <svg
+          className="spinner"
+          viewBox="0 0 50 50"
+        >
+          <circle
+            className="path"
+            cx="25"
+            cy="25"
+            fill="none"
+            r="20"
+            strokeWidth="5"
+          />
+        </svg>
+      </Spinner>
+    </div>
+  </Portal>
+</ReactCleanModal>
+`;

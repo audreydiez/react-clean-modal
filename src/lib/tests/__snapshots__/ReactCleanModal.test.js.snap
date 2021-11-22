@@ -1,17 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Modal rendering Render modal with animations 1`] = `ShallowWrapper {}`;
-
-exports[`Modal rendering Render modal with aria label attribute 1`] = `ShallowWrapper {}`;
-
-exports[`Modal rendering Render modal with custom button and custom function 1`] = `ShallowWrapper {}`;
-
-exports[`Modal rendering Render modal with custom class 1`] = `ShallowWrapper {}`;
-
-exports[`Modal rendering Render modal with data-testid attribute 1`] = `ShallowWrapper {}`;
-
-exports[`Modal rendering Render spinner before modal 1`] = `ShallowWrapper {}`;
-
 exports[`renders a snapshot 1`] = `
 <ReactCleanModal
   closeOnOverlayClick={true}
