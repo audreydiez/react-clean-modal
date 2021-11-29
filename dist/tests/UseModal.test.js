@@ -6,6 +6,9 @@ var _useModal = _interopRequireDefault(require("../utils/useModal"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/**
+ * Test on useModal Hook
+ */
 describe('Test custom hook useModal', () => {
   test('should use counter', () => {
     const {

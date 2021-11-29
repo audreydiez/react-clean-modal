@@ -1,5 +1,7 @@
+import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
 import ReactCleanModal from '../components/ReactCleanModal'
-import React from 'react'
+
 import { waitFor } from '@babel/core/lib/gensync-utils/async'
 import Spinner from '../components/Spinner'
 import { render } from '@testing-library/react'

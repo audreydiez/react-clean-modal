@@ -1,3 +1,5 @@
+import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
 import { useState } from 'react'
 /**
  * A React hook that allows functional components modal

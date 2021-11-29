@@ -1,12 +1,13 @@
+import * as React from 'react'
 import './Spinner.scss'
-import react from 'react'
-/* istanbul ignore next */
+
 /**
  * Function component that render simple spinner
  *
  * @returns
  */
-const Spinner = () => {
+const Spinner = (props) => {
+
     return (
         <>
             <svg className="spinner" viewBox="0 0 50 50" title="Spinner">

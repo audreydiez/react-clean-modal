@@ -1,5 +1,6 @@
 import { renderHook, act } from '@testing-library/react-hooks'
 import useModal from '../utils/useModal'
+import * as React from 'react'
 
 /**
  * Test on useModal Hook
@@ -43,5 +44,23 @@ describe('Test custom hook useModal', () => {
             result.current.toggle()
         })
         expect(result.current.isShowingSpinner).toBe(false)
+    })
+    test('should move body from 15px when modal opened', () => {
+        document.body.innerHTML = `
+                <body id="root" />
+                
+                </body>
+              `
+
+        const { result } = renderHook(() => useModal())
+
+        act(() => {
+            result.current.toggle()
+        })
+
+        const testElement = document.getElementById('root')
+
+        //expect(document.classList.contains('modal-open')).toBe(true)
+        // WaitFor
     })
 })

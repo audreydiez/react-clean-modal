@@ -22,71 +22,48 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+const mockFn = jest.fn();
+
 _enzyme.default.configure({
   adapter: new _enzymeAdapterReact.default()
 });
 
-describe('Children test', () => {
-  test('Modal shows the children', () => {
-    (0, _react2.render)( /*#__PURE__*/_react.default.createElement(_ReactCleanModal.default, {
-      isVisible: true,
-      closeOnOverlayClick: true
-    }, /*#__PURE__*/_react.default.createElement("div", {
-      "data-testid": "test"
-    }))); // get element only in modal-root
-
-    const {
-      getByTestId
-    } = (0, _dom.within)(document.getElementById('modal-root'));
-    expect(getByTestId('test')).toBeInTheDocument();
-  });
-});
-describe('Modal rendering', () => {
-  test('Render modal with custom class', () => {
-    const wrapper = (0, _enzyme.shallow)( /*#__PURE__*/_react.default.createElement(_ReactCleanModal.default, {
-      isVisible: true,
-      customClass: 'my-class'
-    }));
-    expect(wrapper).toMatchSnapshot();
-    expect(wrapper.exists('div.modal-overlay-my-class')).toEqual(true);
-  });
-  test('Render spinner before modal', () => {
-    const wrapper = (0, _enzyme.shallow)( /*#__PURE__*/_react.default.createElement(_ReactCleanModal.default, {
-      isVisible: false,
-      showSpinner: true
-    }));
-    expect(wrapper).toMatchSnapshot();
-    expect(wrapper.exists('div.spinner-overlay')).toEqual(true);
-  });
+const arrayOfBtn = [{
+  text: 'Close modal',
+  className: 'btn-clean-modal-one',
+  eventHandling: mockFn
+}, {
+  text: 'Alert me!',
+  className: 'btn-clean-modal-two',
+  eventHandling: mockFn
+}];
+describe('Modal rendering options', () => {
   test('Render modal with animations', () => {
     const wrapper = (0, _enzyme.shallow)( /*#__PURE__*/_react.default.createElement(_ReactCleanModal.default, {
       isVisible: true,
       animations: true
     }));
-    expect(wrapper).toMatchSnapshot();
     const modalOverlay = wrapper.find('.modal-overlay');
     const modalContainer = wrapper.find('.modal-container');
     expect(modalOverlay.exists('.open')).toEqual(true);
     expect(modalContainer.exists('.open')).toEqual(true);
   });
-  test('Render modal with custom button and custom function', () => {
-    const mockFn = jest.fn();
-    const arrayOfBtn = [{
-      text: 'Close modal',
-      className: 'btn-clean-modal-one',
-      eventHandling: mockFn
-    }, {
-      text: 'Alert me!',
-      className: 'btn-clean-modal-two',
-      eventHandling: mockFn
-    }];
+  test('Render modal with custom button', () => {
     const wrapper = (0, _enzyme.shallow)( /*#__PURE__*/_react.default.createElement(_ReactCleanModal.default, {
       isVisible: true,
       customFooter: arrayOfBtn
     }));
-    expect(wrapper).toMatchSnapshot();
     expect(wrapper.exists('.btn-clean-modal-one')).toEqual(true);
     expect(wrapper.exists('.btn-clean-modal-two')).toEqual(true);
+    const firstButton = wrapper.find('.btn-clean-modal-one');
+    firstButton.simulate('click');
+    expect(mockFn).toHaveBeenCalled();
+  });
+  test('Render modal with custom button and custom function', () => {
+    const wrapper = (0, _enzyme.shallow)( /*#__PURE__*/_react.default.createElement(_ReactCleanModal.default, {
+      isVisible: true,
+      customFooter: arrayOfBtn
+    }));
     const firstButton = wrapper.find('.btn-clean-modal-one');
     firstButton.simulate('click');
     expect(mockFn).toHaveBeenCalled();
@@ -98,7 +75,6 @@ describe('Modal rendering', () => {
     }, /*#__PURE__*/_react.default.createElement("h1", {
       "aria-describedby": "dialog1_label"
     }, "HAHA")));
-    expect(wrapper).toMatchSnapshot();
     expect(wrapper.find('div.modal-container').props()).toHaveProperty('aria-labelledby', 'dialog1_label');
   });
   test('Render modal with data-testid attribute', () => {
@@ -106,7 +82,12 @@ describe('Modal rendering', () => {
       isVisible: true,
       testId: 'modal-test'
     }));
-    expect(wrapper).toMatchSnapshot();
     expect(wrapper.find('div.modal-container').props()).toHaveProperty('data-testid', 'modal-test');
+  });
+  test('tester fonction interieur ', () => {//const wrapper = shallow(<ReactCleanModal isVisible={true} closeOnOverlayClick={true} />)
+    // const overlay = wrapper.find('.modal-overlay')
+    //overlay.simulate('click')
+    //const overlayClicked = wrapper.find('.modal-overlay')
+    //expect(overlayClicked).toHaveClass('close')
   });
 });

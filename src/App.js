@@ -1,5 +1,5 @@
 import './App.scss'
-import React from 'react'
+import React from 'react';
 
 import ReactCleanModal from './lib/components/ReactCleanModal'
 import useModal from './lib/utils/useModal'

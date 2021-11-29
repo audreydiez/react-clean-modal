@@ -1,6 +1,6 @@
 import Enzyme, { shallow } from 'enzyme'
 import ReactCleanModal from '../components/ReactCleanModal'
-import React from 'react'
+import * as React from 'react'
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17'
 
 Enzyme.configure({ adapter: new Adapter() })

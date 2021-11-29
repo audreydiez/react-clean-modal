@@ -66,7 +66,6 @@ const ReactCleanModal = _ref => {
 
   const [animationsOnClose, setAnimationsOnClose] = (0, _react.useState)(false);
   let tempAnimationsOpen = animations;
-  /* istanbul ignore next */
 
   function closeModalEvent(e) {
     // When key press event
@@ -162,7 +161,8 @@ const ReactCleanModal = _ref => {
   })) : '', customFooter ? /*#__PURE__*/_react.default.createElement("div", {
     className: "modal-footer ".concat(customFooterAlign ? customFooterAlign : 'center', " ").concat(customClass ? 'modal-footer-' + customClass : '')
   }, createCustomFooter()) : '')), document.body) : showSpinner ? /*#__PURE__*/_reactDom.default.createPortal( /*#__PURE__*/_react.default.createElement("div", {
-    className: "modal-overlay spinner-overlay".concat(animations ? 'open' : '')
+    role: "spinner",
+    className: "modal-overlay spinner-overlay ".concat(animations ? 'open' : '')
   }, /*#__PURE__*/_react.default.createElement(_Spinner.default, null)), document.body) : '';
 };
 

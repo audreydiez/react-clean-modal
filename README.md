@@ -30,11 +30,11 @@
   <a href="https://img.shields.io/badge/statements-85.71%25-yellow.svg?style=flat">
       <img src="https://img.shields.io/badge/statements-85.71%25-yellow.svg?style=flat">
   </a>
-  <a href="https://img.shields.io/badge/branches-68.18%25-red.svg?style=flat">
-    <img src="https://img.shields.io/badge/branches-68.18%25-red.svg?style=flat">
+  <a href="https://img.shields.io/badge/branches-81.1%25-red.svg?style=flat">
+    <img src="https://img.shields.io/badge/branches-81.1%25-red.svg?style=flat">
   </a>
-<a href="https://img.shields.io/badge/functions-80%25-yellow.svg?style=flat">
-    <img src="https://img.shields.io/badge/functions-80%25-yellow.svg?style=flat">
+<a href="https://img.shields.io/badge/functions-90.9%25-yellow.svg?style=flat">
+    <img src="https://img.shields.io/badge/functions-90.9%25-yellow.svg?style=flat">
   </a>
 <a href="https://img.shields.io/badge/lines-85.71%25-yellow.svg?style=flat">
     <img src="https://img.shields.io/badge/lines-85.71%25-yellow.svg?style=flat">

@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { render } from '@testing-library/react'
 import ReactCleanModal from '../components/ReactCleanModal'
 import '@testing-library/jest-dom/extend-expect'

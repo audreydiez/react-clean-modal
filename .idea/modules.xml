@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/react-custom-modal.iml" filepath="$PROJECT_DIR$/.idea/react-custom-modal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/react-clean-modal.iml" filepath="$PROJECT_DIR$/.idea/react-clean-modal.iml" />
     </modules>
   </component>
 </project>

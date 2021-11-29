@@ -44,25 +44,6 @@ exports[`Render modal with aria label attribute 1`] = `
           </div>
         </div>
         <div
-          class="modal-overlay spinner-overlay "
-          role="spinner"
-        >
-          <svg
-            class="spinner"
-            title="Spinner"
-            viewBox="0 0 50 50"
-          >
-            <circle
-              class="path"
-              cx="25"
-              cy="25"
-              fill="none"
-              r="20"
-              stroke-width="5"
-            />
-          </svg>
-        </div>
-        <div
           class="modal-overlay   "
           id="modal-root"
         >
@@ -187,25 +168,6 @@ exports[`Render modal with custom button and custom function 1`] = `
             
             
           </div>
-        </div>
-        <div
-          class="modal-overlay spinner-overlay "
-          role="spinner"
-        >
-          <svg
-            class="spinner"
-            title="Spinner"
-            viewBox="0 0 50 50"
-          >
-            <circle
-              class="path"
-              cx="25"
-              cy="25"
-              fill="none"
-              r="20"
-              stroke-width="5"
-            />
-          </svg>
         </div>
         <div
           class="modal-overlay   "
@@ -397,41 +359,6 @@ exports[`Render spinner before modal 1`] = `
   <Portal
     containerInfo={
       <body>
-        <div
-          class="modal-overlay   "
-          id="modal-root"
-        >
-          <div
-            aria-modal="true"
-            class="modal modal-container   "
-            role="dialog"
-          >
-            <h1>
-              Modal title
-            </h1>
-            <button
-              class="btn-clean-modal"
-              type="button"
-            >
-              Close
-            </button>
-            
-            
-          </div>
-        </div>
-        <div
-          class="modal-overlay   modal-overlay-my-class"
-          id="modal-root"
-        >
-          <div
-            aria-modal="true"
-            class="modal modal-container  modal-container-my-class "
-            role="dialog"
-          >
-            
-            
-          </div>
-        </div>
         <div
           class="modal-overlay spinner-overlay "
           role="spinner"

@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import ReactCleanModal from '../components/ReactCleanModal'
 import '@testing-library/jest-dom/extend-expect'
 import Enzyme, { mount } from 'enzyme'
@@ -55,7 +55,7 @@ test('Render modal with custom button and custom function', () => {
 test('Render modal with aria label attribute', () => {
     const subject = mount(
         <ReactCleanModal isVisible={true} ariaLabelledBy={'dialog1_label'}>
-            <h1 aria-describedby="dialog1_label">HAHA</h1>
+            <h1 aria-describedby="dialog1_label">Modal title</h1>
         </ReactCleanModal>
     )
     expect(EnzymeToJson(subject)).toMatchSnapshot()

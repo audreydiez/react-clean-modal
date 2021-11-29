@@ -30,6 +30,14 @@ const useModal = () => {
 
     if (!isShowing) {
       setIsShowingSpinner(false);
+      document.body.classList.add('modal-open');
+      document.body.classList.remove('modal-close');
+    } // Scroll management
+
+
+    if (isShowing) {
+      document.body.classList.add('modal-close');
+      document.body.classList.remove('modal-open');
     }
   }
   /**
@@ -38,7 +46,17 @@ const useModal = () => {
 
 
   function toggleSpinner() {
-    setIsShowingSpinner(!isShowingSpinner);
+    setIsShowingSpinner(!isShowingSpinner); // Scroll management
+
+    if (!isShowing) {
+      document.body.classList.add('modal-open');
+      document.body.classList.remove('modal-close');
+    }
+
+    if (isShowing) {
+      document.body.classList.add('modal-close');
+      document.body.classList.remove('modal-open');
+    }
   }
 
   return {
