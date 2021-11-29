@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+
+## [0.2.1] - 2021-11-29
+
+### Fixed
+
+-   Tests and snapshots refactored
+
+
 ## [0.2.0] - 2021-11-05
 
 ### Added
@@ -77,6 +85,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 -   Add built files
 
+[0.2.1]: https://github.com/audreydiez/react-clean-modal
 [0.2.0]: https://github.com/audreydiez/react-clean-modal/commit/8a32bea0239de59d1de8b26ad465189915915596
 [0.1.7]: https://github.com/audreydiez/react-clean-modal/commit/b338af0050cbd5dd3fd41cdcb7d53fc972aeace5
 [0.1.4]: https://github.com/audreydiez/react-custom-modal/pull/2

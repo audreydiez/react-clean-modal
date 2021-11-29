@@ -47,6 +47,7 @@ exports[`Render modal with aria label attribute 1`] = `
           class="modal-overlay spinner-overlay "
           role="spinner"
         >
+          /* istanbul ignore next */
           <svg
             class="spinner"
             title="Spinner"
@@ -192,6 +193,7 @@ exports[`Render modal with custom button and custom function 1`] = `
           class="modal-overlay spinner-overlay "
           role="spinner"
         >
+          /* istanbul ignore next */
           <svg
             class="spinner"
             title="Spinner"
@@ -436,6 +438,7 @@ exports[`Render spinner before modal 1`] = `
           class="modal-overlay spinner-overlay "
           role="spinner"
         >
+          /* istanbul ignore next */
           <svg
             class="spinner"
             title="Spinner"
@@ -458,6 +461,7 @@ exports[`Render spinner before modal 1`] = `
       className="modal-overlay spinner-overlay "
       role="spinner"
     >
+      /* istanbul ignore next */
       <Spinner>
         <svg
           className="spinner"

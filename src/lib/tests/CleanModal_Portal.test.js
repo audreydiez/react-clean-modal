@@ -1,3 +1,5 @@
+
+
 import { render } from '@testing-library/react'
 import ReactCleanModal from '../components/ReactCleanModal'
 import { fireEvent, within } from '@testing-library/dom'
@@ -19,4 +21,3 @@ test('Modal shows the children', () => {
     const { getByTestId } = within(document.getElementById('modal-root'))
     expect(getByTestId('test')).toBeInTheDocument()
 })
-

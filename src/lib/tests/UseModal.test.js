@@ -45,22 +45,5 @@ describe('Test custom hook useModal', () => {
         })
         expect(result.current.isShowingSpinner).toBe(false)
     })
-    test('should move body from 15px when modal opened', () => {
-        document.body.innerHTML = `
-                <body id="root" />
-                
-                </body>
-              `
 
-        const { result } = renderHook(() => useModal())
-
-        act(() => {
-            result.current.toggle()
-        })
-
-        const testElement = document.getElementById('root')
-
-        //expect(document.classList.contains('modal-open')).toBe(true)
-        // WaitFor
-    })
 })

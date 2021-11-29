@@ -69,11 +69,5 @@ describe('Modal rendering options', () => {
         )
     })
 
-    test('tester fonction interieur ', () => {
-        //const wrapper = shallow(<ReactCleanModal isVisible={true} closeOnOverlayClick={true} />)
-        // const overlay = wrapper.find('.modal-overlay')
-        //overlay.simulate('click')
-        //const overlayClicked = wrapper.find('.modal-overlay')
-        //expect(overlayClicked).toHaveClass('close')
-    })
+
 })

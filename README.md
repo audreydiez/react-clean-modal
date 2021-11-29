@@ -10,11 +10,7 @@
 
 <h4 align="center">A minimal modal plugin for React and very easy to use.</h4>
 
-<div align="center">
-  <a href="https://www.npmjs.com/package/react-clean-modal">
-    <img src="https://badge.fury.io/js/react-clean-modal.svg"
-         alt="npm package">
-  </a>
+<div align="center">  
   <a href="https://img.shields.io/npm/dt/react-clean-modal">
       <img src="https://img.shields.io/npm/dt/react-clean-modal">
   </a>
@@ -27,17 +23,17 @@
 </div>
 
 <div align="center">
-  <a href="https://img.shields.io/badge/statements-85.71%25-yellow.svg?style=flat">
-      <img src="https://img.shields.io/badge/statements-85.71%25-yellow.svg?style=flat">
+  <a href="https://img.shields.io/badge/statements-83.33%25-green.svg?style=flat">
+      <img src="https://img.shields.io/badge/statements-83.33%25-green.svg?style=flat">
   </a>
-  <a href="https://img.shields.io/badge/branches-81.1%25-red.svg?style=flat">
-    <img src="https://img.shields.io/badge/branches-81.1%25-red.svg?style=flat">
+  <a href="https://img.shields.io/badge/branches-76%25-yellow.svg?style=flat">
+    <img src="https://img.shields.io/badge/branches-76%25-yellow.svg?style=flat">
   </a>
-<a href="https://img.shields.io/badge/functions-90.9%25-yellow.svg?style=flat">
-    <img src="https://img.shields.io/badge/functions-90.9%25-yellow.svg?style=flat">
+<a href="https://img.shields.io/badge/functions-83.33%25-green.svg?style=flat">
+    <img src="https://img.shields.io/badge/functions-83.33%25-green.svg?style=flat">
   </a>
-<a href="https://img.shields.io/badge/lines-85.71%25-yellow.svg?style=flat">
-    <img src="https://img.shields.io/badge/lines-85.71%25-yellow.svg?style=flat">
+<a href="https://img.shields.io/badge/lines-83.33%25-green.svg?style=flat">
+    <img src="https://img.shields.io/badge/lines-83.33%25-green.svg?style=flat">
   </a>
 </div>
 

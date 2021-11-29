@@ -173,6 +173,7 @@ const ReactCleanModal = ({
               <div
                   role="spinner"
                   className={`modal-overlay spinner-overlay ${animations ? 'open' : ''}`}>
+                  /* istanbul ignore next */
                   <Spinner />
               </div>,
               document.body
