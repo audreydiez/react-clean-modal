@@ -1,7 +1,7 @@
 {
     "name": "react-clean-modal",
     "author": "Audrey Diez <audrey.diez@gmail.com> (https://audreydiez.com/)",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "homepage": "https://youthful-edison-51a3c3.netlify.app/",
     "license": "MIT",
     "private": false,
@@ -26,7 +26,7 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/audreydiez/react-custom-modal"
+        "url": "https://github.com/audreydiez/react-clean-modal"
     },
     "jest": {
         "moduleNameMapper": {
