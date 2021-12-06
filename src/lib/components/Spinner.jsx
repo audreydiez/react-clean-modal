@@ -13,7 +13,7 @@ const Spinner = (props) => {
             <circle className="path" cx="25" cy="25" r="20" fill="none" strokeWidth="5" />
         </svg>
     }
-    /* istanbul ignore next */
+    
     return createSpinner()
 
 }
